@@ -1,11 +1,12 @@
 FROM golang:1.18
 WORKDIR /src
 
-ADD qrobot /src/
-ADD config.yaml /src/
+COPY . /src/
 
-RUN chmod +x ./qrobot
+RUN go env -w GO111MODULE=on
+RUN go env -w GOPROXY=https://goproxy.cn,direct
+RUN go mod tidy
 
-ENTRYPOINT [ "./qrobot" ]
+ENTRYPOINT [ "go","run","main.go" ]
 
 EXPOSE 9000
