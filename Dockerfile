@@ -5,6 +5,6 @@ ADD qrobot /src/
 ADD config.yaml /src/
 
 
-CMD [ "./qrobot" ] 
+ENTRYPOINT [ "./qrobot" ]
 
 EXPOSE 9000
