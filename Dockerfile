@@ -5,4 +5,6 @@ ADD qrobot /src/
 ADD config.yaml /src/
 
 
-CMD [ "./qrobot" ]
+CMD [ "./qrobot" ] 
+
+EXPOSE 9000
